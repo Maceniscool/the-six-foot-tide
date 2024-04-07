@@ -8,7 +8,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-
         * {
             font-family: "Inter", sans-serif;
         }
@@ -20,8 +19,6 @@
             background: linear-gradient(to right, #000000, #434343);
             background-color: black;
             height: 2000px;
-
-            /* Adjust based on content */
         }
 
         .container {
@@ -38,8 +35,11 @@
         }
 
         .animated-text {
-            position: relative;
-            height: 100px;
+            display: flex;
+            flex-direction: row; /* Default direction for desktop */
+            justify-content: space-between;
+            align-items: center;
+            height: auto; /* Adjust as needed */
         }
 
         .text-left,
@@ -91,9 +91,35 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-             margin-top: -4rem;
-             font-family: monospace;
-            /* Adjust this value based on your layout needs */
+            margin-top: -4rem;
+            font-family: monospace;
+        }
+
+        /* Responsive styles for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%; /* Adjust the width for smaller screens */
+            }
+
+            .title {
+                font-size: 2em; /* Adjust font size for smaller screens */
+            }
+
+            .text-left,
+            .text-right {
+                position: static; /* Remove absolute positioning */
+                width: 100%; /* Take full width */
+                text-align: center; /* Center text */
+            }
+
+            .animated-text {
+                flex-direction: column; /* Stack vertically on mobile */
+            }
+
+            img {
+                width: 100%; /* Make images responsive */
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -109,8 +135,7 @@
                 <h1>
                     Eric Richard
                 </h1>
-                <img src="eric.jpg" style="width: 300px; height: 400px;"
-                >
+                <img src="eric.jpg" style="width: 300px; height: 400px;">
                 <p>The best voice town</p>
             </div>
             <div class="text-right" style="align-items: center;">
